@@ -10,56 +10,52 @@ import TeamStats from './Team-stats';
 import Player from './Player';
 
 export default class App extends Component {
-
   constructor(props) {
     super(props);
 
-    this.state = {
-      players: []
-    };
+    // setting up the state
+    this.state = { players: [] };
   }
 
   componentWillMount() {
-    this.setState({
-      players: [
-        {
-          _id: 1,
-          name: "Manny Henri",
-          ballManipulation: 2,
-          kickingAbilities: 3,
-          passingAbilities: 1,
-          duelTackling: 1,
-          fieldCoverage: 3,
-          blockingAbilities: 2,
-          gameStrategy: 3,
-          playmakingRisks: 2,
-        },
-        {
-          _id: 2,
-          name: "Speedy Gonz",
-          ballManipulation: 2,
-          kickingAbilities: 3,
-          passingAbilities: 1,
-          duelTackling: 1,
-          fieldCoverage: 3,
-          blockingAbilities: 2,
-          gameStrategy: 3,
-          playmakingRisks: 2,
-        },
-        {
-          _id: 3,
-          name: "Tracey Good",
-          ballManipulation: 2,
-          kickingAbilities: 3,
-          passingAbilities: 1,
-          duelTackling: 1,
-          fieldCoverage: 3,
-          blockingAbilities: 2,
-          gameStrategy: 3,
-          playmakingRisks: 2,
-        }
-      ]
-    })
+    this.setState({ players: [
+      {
+        _id: 1,
+        name: "Manny Henri",
+        ballManipulation: 2,
+        kickingAbilities: 3,
+        passingAbilities: 1,
+        duelTackling: 1,
+        fieldCoverage: 3,
+        blockingAbilities: 2,
+        gameStrategy: 3,
+        playmakingRisks: 2,
+      },
+      {
+        _id: 2,
+        name: "Speedy Gonz",
+        ballManipulation: 2,
+        kickingAbilities: 3,
+        passingAbilities: 1,
+        duelTackling: 1,
+        fieldCoverage: 3,
+        blockingAbilities: 2,
+        gameStrategy: 3,
+        playmakingRisks: 2,
+      },
+      {
+        _id: 3,
+        name: "Tracey Good",
+        ballManipulation: 2,
+        kickingAbilities: 3,
+        passingAbilities: 1,
+        duelTackling: 1,
+        fieldCoverage: 3,
+        blockingAbilities: 2,
+        gameStrategy: 3,
+        playmakingRisks: 2,
+      }
+    ]});
   }
 
   renderPlayers() {
@@ -79,7 +75,7 @@ export default class App extends Component {
           <div className="row">
             <div className="col s12 m7" ><Player /></div>
             <div className="col s12 m5" >
-              <h2>Team List</h2>
+              <h2>Team list</h2>
               <Divider/>
                 <List>
                   {this.renderPlayers()}
