@@ -19,23 +19,20 @@ const styles = {
 };
 
 export default class Player extends Component {
-  render() {
+  showEditForm() {
+    this.props.showEditForm();
+  }
 
+  render() {
     const player = this.props.player;
-    const defence = player.duelTackling + player.fieldCoverage
-                    + player.gameStrategy + player.playmakingRisks;
-    const offence = player.kickingAbilities + player.gameStrategy
-                    + player.ballManipulation + player.passingAbilities
-                    + player.fieldCoverage + player.playmakingRisks;
-    const total = player.kickingAbilities + player.gameStrategy
-                    + player.ballManipulation + player.passingAbilities
-                    + player.fieldCoverage + player.playmakingRisks
-                    + player.duelTackling + player.blockingAbilities;
+    const defense = player.duelTackling + player.fieldCoverage + player.blockingAbilities + player.gameStrategy + player.playmakingRisks;
+    const offense = player.kickingAbilities + player.gameStrategy + player.ballManipulation + player.passingAbilities + player.fieldCoverage + player.playmakingRisks;
+    const total = player.kickingAbilities + player.gameStrategy + player.ballManipulation + player.passingAbilities + player.fieldCoverage + player.playmakingRisks + player.duelTackling + player.blockingAbilities;
 
     return (
       <Card>
         <CardMedia
-          overlay={<CardTitle title={player.name} subtitle={`Offense: ${offence} - Defense: ${defence} - Total: ${total}`} />}
+          overlay={<CardTitle title={player.name} subtitle={`Offense: ${offense} - Defense: ${defense} - Total: ${total}`} />}
         >
           <img src="player.jpg" />
         </CardMedia>
@@ -116,7 +113,11 @@ export default class Player extends Component {
           </div>
         </CardText>
         <CardActions>
-
+          <RaisedButton
+            label="Edit player/stats"
+            labelPosition="before"
+            style={styles.button}
+            onClick={this.showEditForm.bind(this)}/>
         </CardActions>
       </Card>
     )
