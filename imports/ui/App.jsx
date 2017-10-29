@@ -37,8 +37,8 @@ export default class App extends Component {
             title="Soccer Application"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             showMenuIconButton={false}>
-              <AccountsWrapper />
-            </AppBar>
+            <AccountsWrapper />
+          </AppBar>
           <div className="row">
             <div className="col s12 m7" ><Player /></div>
             <div className="col s12 m5" >
