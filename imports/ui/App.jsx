@@ -61,7 +61,7 @@ export default class App extends Component {
             <AccountsWrapper />
           </AppBar>
           <div className="row">
-            <div className="col s12 m7" ><Player /></div>
+            <div className="col s12 m7" ><Player player={this.state.currentPlayer} /></div>
             <div className="col s12 m5" >
               <h2>Team list</h2><Link to="/new" className="waves-effect waves-light btn">Add player</Link>
               <Divider/>
