@@ -7,19 +7,19 @@ export default class Example extends Component {
     event.preventDefault();
 
     Players.insert({
-      name: this.refs.name.value,
-      team: this.refs.team.value,
-      ballManipulation: this.refs.ballManipulation.value,
-      kickingAbilities: this.refs.kickingAbilities.value,
-      passingAbilities: this.refs.passingAbilities.value,
-      duelTackling: this.refs.duelTackling.value,
-      fieldCoverage: this.refs.fieldCoverage.value,
-      blockingAbilities: this.refs.blockingAbilities.value,
-      gameStrategy: this.refs.gameStrategy.value,
-      playmakingRisks: this.refs.playmakingRisks.value,
-      notes: this.refs.notes.value,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
+      name: this.refs.name.value
+      , team: this.refs.team.value
+      , ballManipulation: this.refs.ballManipulation.value
+      , kickingAbilities: this.refs.kickingAbilities.value
+      , passingAbilities: this.refs.passingAbilities.value
+      , duelTackling: this.refs.duelTackling.value
+      , fieldCoverage: this.refs.fieldCoverage.value
+      , blockingAbilities: this.refs.blockingAbilities.value
+      , gameStrategy: this.refs.gameStrategy.value
+      , playmakingRisks: this.refs.playmakingRisks.value
+      , notes: this.refs.notes.value
+      , createdAt: new Date()
+      , owner: Meteor.userId()
     });
 
     console.log("Success player submitted!");
