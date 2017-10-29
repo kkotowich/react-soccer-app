@@ -26,7 +26,6 @@ export default class Example extends Component {
       if(error) {
         alert("Oups something went wrong: " + error.reason);
       } else {
-        alert("Player added");
         browserHistory.push('/');
       }
     });
