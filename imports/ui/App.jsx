@@ -15,18 +15,39 @@ import TeamStats from './Team-stats';
 import Player from './Player';
 import AccountsWrapper from './AccountsWrapper';
 
+const tempPlayer = {
+  name: "Temp Player"
+  , team: "Temp Team"
+  , ballManipulation: 0
+  , kickingAbilities: 0
+  , passingAbilities: 0
+  , duelTackling: 0
+  , fieldCoverage: 0
+  , blockingAbilities: 0
+  , gameStrategy: 0
+  , playmakingRisks: 0
+  , notes: "Temp Notes"
+};
+
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     // setting up the state
-    this.state = { players: [] };
+    this.state = { currentPlayer: tempPlayer };
+    this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
   }
 
   renderPlayers() {
     return this.props.players.map((player) => (
-      <TeamList key={player._id} player={player} />
+      <TeamList key={player._id} player={player} updateCurrentPlayer={this.updateCurrentPlayer} />
     ));
+  }
+
+  updateCurrentPlayer(player) {
+    this.setState({
+      currentPlayer: player
+    });
   }
 
   render() {
