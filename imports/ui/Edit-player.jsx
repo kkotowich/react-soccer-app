@@ -29,7 +29,6 @@ export default class Edit extends Component {
       if(error) {
         alert("Oups something went wrong: " + error.reason);
       } else {
-        alert("Player updated");
         this.showTeamStats();
       }
     });
@@ -41,7 +40,7 @@ export default class Edit extends Component {
     return (
       <div className="row">
         <form className="col s12" onSubmit={this.editPlayer.bind(this)}>
-          <h3>Add a new player</h3>
+          <h3>Update player</h3>
 
           <div className="row">
             <div className="input-field col s6">
